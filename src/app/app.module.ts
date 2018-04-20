@@ -19,6 +19,7 @@ import { CategoryItemRecentComponent } from './views/category-item/category-item
 import { MenuListComponent } from './components/menu-list/menu-list.component';
 import { SearchComponent } from './components/search/search.component';
 import { CategoryItemService } from './service/category-item.service';
+import { SearchResultService } from './service/search-result.service';
 
 const routes: Routes = [{
   path: '',
@@ -76,7 +77,8 @@ const routes: Routes = [{
     CategoryService,
     MenuItemService,
     RankDetailService,
-    CategoryItemService
+    CategoryItemService,
+    SearchResultService
   ],
   bootstrap: [AppComponent]
 })
