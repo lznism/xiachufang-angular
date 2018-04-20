@@ -1,3 +1,11 @@
-<p>
-  category-item works!
-</p>
+<div class="category-item">
+    <app-header></app-header>
+    <div class="head">
+        <p class="title">{{categoryItemTitle}}</p>
+        <p class="choice">
+            <a routerLinkActive="router-link-active" [routerLink]="popUrl" class="welcome">最受欢迎</a>
+            <a routerLinkActive="router-link-active" [routerLink]="recentUrl">最近流行</a>
+        </p>
+    </div>
+    <router-outlet></router-outlet>
+</div>

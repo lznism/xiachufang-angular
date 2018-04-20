@@ -1,0 +1,12 @@
+<div class="list">
+    <div routerLink="{{item.href}}" class="list-item" *ngFor="let item of list">
+        <img src="{{item.imgUrl}}">
+        <div class="content">
+            <p class="title">{{item.title}}</p>
+            <p class="desc">
+                <span *ngIf="item.rate">评分{{item.rate}}</span>&nbsp;&nbsp;
+                <span *ngIf="item.doneNum">{{item.doneNum}}人做过</span>
+            </p>
+        </div>
+    </div>
+</div>

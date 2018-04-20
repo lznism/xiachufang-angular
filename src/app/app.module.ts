@@ -14,6 +14,11 @@ import { HeaderComponent } from './components/header/header.component';
 import { CategoryService } from './service/category.service';
 import { MenuItemService } from './service/menu-item.service';
 import { RankDetailService } from './service/rank-detail.service';
+import { CategoryItemPopComponent } from './views/category-item/category-item-pop.component';
+import { CategoryItemRecentComponent } from './views/category-item/category-item-recent.component';
+import { MenuListComponent } from './components/menu-list/menu-list.component';
+import { SearchComponent } from './components/search/search.component';
+import { CategoryItemService } from './service/category-item.service';
 
 const routes: Routes = [{
   path: '',
@@ -23,7 +28,18 @@ const routes: Routes = [{
   component: CategoryComponent
 }, {
   path: 'category/:id',
-  component: CategoryItemComponent
+  redirectTo: 'category/:id/pop',
+  pathMatch: 'full'
+}, {
+  path: 'category/:id',
+  component: CategoryItemComponent,
+  children: [{
+    path: 'pop',
+    component: CategoryItemPopComponent
+  }, {
+    path: 'recent',
+    component: CategoryItemRecentComponent
+  }]
 }, {
   path: 'recipe/:id',
   component: MenuItemComponent
@@ -44,7 +60,11 @@ const routes: Routes = [{
     MenuItemComponent,
     RankDetailComponent,
     SearchResultComponent,
-    HeaderComponent
+    HeaderComponent,
+    CategoryItemPopComponent,
+    CategoryItemRecentComponent,
+    MenuListComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +75,8 @@ const routes: Routes = [{
     HomeService,
     CategoryService,
     MenuItemService,
-    RankDetailService
+    RankDetailService,
+    CategoryItemService
   ],
   bootstrap: [AppComponent]
 })
