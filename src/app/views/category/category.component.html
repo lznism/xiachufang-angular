@@ -1,3 +1,14 @@
-<p>
-  category works!
-</p>
+<div id="category">
+    <app-header></app-header>
+    <div id="all-category">
+        <section *ngFor="let item of category">
+            <h3 class="title">{{item.title}}</h3>
+            <div class="category-section clearfix">
+                <div class="category-item" *ngFor="let _item of item.info" (click)="handleClick(_item.href)">
+                    <img src="{{_item.imgUrl}}" >
+                    <p>{{_item.title}}</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

@@ -10,6 +10,8 @@ import { RankDetailComponent } from './views/rank-detail/rank-detail.component';
 import { SearchResultComponent } from './views/search-result/search-result.component';
 import { HomeService } from './service/home.service';
 import { HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from './components/header/header.component';
+import { CategoryService } from './service/category.service';
 
 const routes: Routes = [{
   path: '',
@@ -39,7 +41,8 @@ const routes: Routes = [{
     CategoryItemComponent,
     MenuItemComponent,
     RankDetailComponent,
-    SearchResultComponent
+    SearchResultComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +50,8 @@ const routes: Routes = [{
     HttpClientModule
   ],
   providers: [
-    HomeService
+    HomeService,
+    CategoryService
   ],
   bootstrap: [AppComponent]
 })
