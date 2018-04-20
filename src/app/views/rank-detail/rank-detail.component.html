@@ -1,3 +1,19 @@
-<p>
-  rank-detail works!
-</p>
+<div>
+    <app-header></app-header>
+    <div class="rank-detail">
+        <h1 class="title">{{rankDetail.title}}</h1>
+        <ul class="list">
+            <li tag="li" routerLink="{{item.href}}" *ngFor="let item of rankDetail.explore">
+                <img class="menu-pic" src="{{item.imgUrl}}">
+                <div class="wrapper">
+                    <div class="info">
+                        <p class="title">{{item.menuName}}</p>
+                        <p class="author">{{item.author}}</p>
+                        <p class="doneNum">{{item.doneNum}}人做过</p>
+                    </div>
+                    <img class="avatar" src="{{item.authorImg}}">
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

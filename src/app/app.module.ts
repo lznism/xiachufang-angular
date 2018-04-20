@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
 import { CategoryService } from './service/category.service';
 import { MenuItemService } from './service/menu-item.service';
+import { RankDetailService } from './service/rank-detail.service';
 
 const routes: Routes = [{
   path: '',
@@ -53,7 +54,8 @@ const routes: Routes = [{
   providers: [
     HomeService,
     CategoryService,
-    MenuItemService
+    MenuItemService,
+    RankDetailService
   ],
   bootstrap: [AppComponent]
 })
