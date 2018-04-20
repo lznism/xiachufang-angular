@@ -1,3 +1,96 @@
-<p>
-  home works!
-</p>
+<div id="home">
+    <header>
+        <img src="assets/images/logo.png" alt="logo" class="logo">
+    </header>
+    <section class="category">
+        <div class="row">
+            <a routerLink="/category/40076" class="category-item">
+                <p>家常菜</p>
+            </a>
+            <a routerLink="/category/40077" class="category-item">
+                <p>快手菜</p>
+            </a>
+            <a routerLink="/category/40078" class="category-item">
+                <p>下饭菜</p>
+            </a>
+        </div>
+        <div class="row">
+            <a routerLink="/category/40071" class="category-item">
+                <p>早餐</p>
+            </a>
+            <a routerLink="/category/1012713" class="category-item">
+                <p>肉</p>
+            </a>
+            <a routerLink="/category/957" class="category-item">
+                <p>鱼</p>
+            </a>
+        </div>
+        <a routerLink="/category" class="all-category">全部菜谱分类</a>
+    </section>
+    <section class="list">
+        <h3>菜谱榜单</h3>
+        <div class="list-head">
+            <div routerLink="{{item.href}}" class="head-item" *ngFor="let item of rankMenu.head">
+                <img src="{{item.imgUrl}}">
+                <p class="title">{{item.title}}</p>
+                <p class="desc">{{item.description}}</p>
+            </div>
+        </div>
+        <div class="list-body">
+            <div routerLink="{{item.href}}" class="body-item" *ngFor="let item of rankMenu.body">
+                <img src="{{item.imgUrl}}">
+                <div class="content">
+                    <p class="title">{{item.title}}</p>
+                    <p class="desc">
+                        <span *ngIf="item.rate">评分{{item.rate}}</span>
+                        <span *ngIf="item.doneNum">{{item.doneNum}}人做过</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="list">
+        <h3>流行菜单</h3>
+        <div class="list-head">
+            <div routerLink="{{item.href}}" class="head-item" *ngFor="let item of popMenu.head">
+                <img src="{{item.imgUrl}}">
+                <p class="title">{{item.title}}</p>
+                <p class="desc">{{item.description}}</p>
+            </div>
+        </div>
+        <div class="list-body">
+            <div routerLink="{{item.href}}" class="body-item" *ngFor="let item of popMenu.body">
+                <img src="{{item.imgUrl}}">
+                <div class="content">
+                    <p class="title">{{item.title}}</p>
+                    <p class="desc">
+                        <span *ngIf="item.rate">评分{{item.rate}}</span>
+                        <span *ngIf="item.doneNum">{{item.doneNum}}人做过</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="list">
+        <h3>新秀菜单</h3>
+        <div class="list-head">
+            <div routerLink="{{item.href}}" class="head-item" *ngFor="let item of risingMenu.head">
+                <img src="{{item.imgUrl}}">
+                <p class="title">{{item.title}}</p>
+                <p class="desc">{{item.description}}</p>
+            </div>
+        </div>
+        <div class="list-body">
+            <div routerLink="{{item.href}}" class="body-item" *ngFor="let item of risingMenu.body">
+                <img src="{{item.imgUrl}}">
+                <div class="content">
+                    <p class="title">{{item.title}}</p>
+                    <p class="desc">
+                        <span *ngIf="item.rate">评分{{item.rate}}</span>
+                        <span *ngIf="item.doneNum">{{item.doneNum}}人做过</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

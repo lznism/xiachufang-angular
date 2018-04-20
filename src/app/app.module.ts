@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './views/home/home.component';
 import { CategoryComponent } from './views/category/category.component';
@@ -9,6 +8,8 @@ import { CategoryItemComponent } from './views/category-item/category-item.compo
 import { MenuItemComponent } from './views/menu-item/menu-item.component';
 import { RankDetailComponent } from './views/rank-detail/rank-detail.component';
 import { SearchResultComponent } from './views/search-result/search-result.component';
+import { HomeService } from './service/home.service';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [{
   path: '',
@@ -42,10 +43,12 @@ const routes: Routes = [{
   ],
   imports: [
     BrowserModule,
-    HttpModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    HomeService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
