@@ -1,3 +1,36 @@
-<p>
-  menu-item works!
-</p>
+<div>
+    <app-header></app-header>
+    <div class="head-img">
+        <img src="{{detail.headImgUrl}}" >
+    </div>
+    <div class="title">
+        <h1>{{detail.title}}</h1>
+        <p>
+            <span>{{detail.rate}}综合评分</span>
+            <span>{{detail.doneNum}}人做过</span>
+        </p>
+    </div>
+    <div class="description">
+        {{detail.description}}
+    </div>
+    <div class="userinfo">
+        <p class="author">作者：{{detail.author}}</p>
+        <img class="avatar" src="{{detail.avatar}}">
+    </div>
+    <table class="materials">
+        <tr>
+            <td colspan="2">用料</td>
+        </tr>
+        <tr *ngFor="let item of detail.materials">
+            <td>{{item.ingredient}}</td>
+            <td>{{item.weight}}</td>
+        </tr>
+    </table>
+    <ul class="steps">
+        <li *ngFor="let item of detail.steps">
+            <p class="step-num">{{item.subTitle}}</p>
+            <img src="{{item.stepImg}}" *ngIf="item.stepImg">
+            <p class="desc">{{item.description}}</p>
+        </li>
+    </ul>
+</div>
